@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.MainActivity">
+
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/cardView"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/light_black"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+            <ImageView
+                android:id="@+id/image_view_home"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:src="@drawable/home" />
+
+            <ImageView
+                android:id="@+id/image_view_details"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:src="@drawable/details" />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout_in_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/opac_light_black"
+        android:onClick="dummyClick"
+        android:visibility="invisible">
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_margin="15dp"
+            app:cardBackgroundColor="@color/white">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/text_view_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text="SORT BY"
+                    android:textColor="@color/black" />
+
+                <RadioGroup
+                    android:id="@+id/radioGroup_sortingOptions"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:checkedButton="@+id/radio_button_orderNo_DECS">
+
+                    <RadioButton
+                        android:id="@+id/radio_button_orderNo_DECS"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="By Order No. DECS (Default)" />
+
+                    <RadioButton
+                        android:id="@+id/radio_button_orderNo_ACS"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="By Order No. ACS" />
+
+                    <RadioButton
+                        android:id="@+id/radio_button_date_DECS"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="By Date DECS" />
+
+                    <RadioButton
+                        android:id="@+id/radio_button_date_ACS"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="By Date ACS" />
+
+                    <RadioButton
+                        android:id="@+id/radio_button_price_DECS"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="By Price DECS" />
+
+                    <RadioButton
+                        android:id="@+id/radio_button_price_ACS"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="By Price ACS" />
+
+                </RadioGroup>
+
+                <Button
+                    android:id="@+id/button_sort"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/light_black"
+                    android:text="Sort"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="10dp" />
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/progressbarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/opac_light_black"
+        android:onClick="dummyClick"
+        android:visibility="invisible">
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true" />
+
+    </RelativeLayout>
+
+</RelativeLayout>
